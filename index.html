@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LinkAir Admin Gate</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="brand-logo">
+      <div class="brand-icon">
+        <i class="fa-solid fa-plane-departure"></i>
+      </div>
+      <h1 class="logo-text">
+        <span class="link">Link</span><span class="air">Air</span>
+      </h1>
+      <p>Admin Gate — Secure Access</p>
+    </div>
+    <form id="loginForm">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="admin@linkair.com" />
+      <label>Password</label>
+      <div class="input-wrap">
+        <input type="password" id="loginPassword" placeholder="Enter your password" />
+        <i class="fa-solid fa-eye toggle-pw" id="togglePw"></i>
+      </div>
+      <div id="loginError" class="login-error hidden">Invalid credentials. Try again.</div>
+      <button type="submit">Sign In <i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+    <small>Secure access for LinkAir administrators only.</small>
+  </div>
+</section>
+
+<!-- ADMIN APP -->
+<section class="admin-app hidden" id="adminApp">
+
+  <aside class="sidebar" id="sidebar">
+    <div>
+      <div class="sidebar-logo">
+        <div class="logo-box">
+          <i class="fa-solid fa-plane-departure"></i>
+        </div>
+        <div>
+          <h2 class="logo-text sidebar-logo-text">
+            <span class="link">Link</span><span class="air">Air</span>
+          </h2>
+          <span>Admin Gate</span>
+        </div>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="active" data-page="dashboard"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+        <li data-page="users"><i class="fa-solid fa-users"></i> Users</li>
+        <li data-page="parcels"><i class="fa-solid fa-box"></i> Parcels</li>
+        <li data-page="trips"><i class="fa-solid fa-plane"></i> Trips</li>
+        <li data-page="requests"><i class="fa-solid fa-handshake"></i> Requests</li>
+        <li data-page="reports"><i class="fa-solid fa-flag"></i> Reports</li>
+        <li data-page="settings"><i class="fa-solid fa-gear"></i> Settings</li>
+      </ul>
+    </div>
+
+    <button class="logout-btn" id="logoutBtn">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </button>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">Monitor LinkAir platform activity and safety.</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search anything..." />
+          <button class="clear-search hidden" id="clearSearch"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="notif-btn" id="notifBtn">
+          <i class="fa-solid fa-bell"></i>
+          <span class="notif-badge">3</span>
+        </div>
+        <div class="admin-profile">
+          <div>
+            <strong>LinkAir Admin</strong>
+            <span>Super Admin</span>
+          </div>
+          <div class="admin-avatar">A</div>
+        </div>
+      </div>
+    </header>
+
+    <div id="toast" class="toast hidden"></div>
+    <section id="content"></section>
+  </main>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+    <div id="modalBody"></div>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
