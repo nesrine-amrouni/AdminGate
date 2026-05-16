@@ -61,6 +61,7 @@
         <li data-page="trips"><i class="fa-solid fa-plane"></i> Trips</li>
         <li data-page="requests"><i class="fa-solid fa-handshake"></i> Requests</li>
         <li data-page="reports"><i class="fa-solid fa-flag"></i> Reports</li>
+        <li data-page="notifications"><i class="fa-solid fa-bell"></i> Notifications</li>
         <li data-page="settings"><i class="fa-solid fa-gear"></i> Settings</li>
       </ul>
     </div>
@@ -87,7 +88,7 @@
         </div>
         <div class="notif-btn" id="notifBtn">
           <i class="fa-solid fa-bell"></i>
-          <span class="notif-badge">3</span>
+          <span class="notif-badge" id="notifBadge">0</span>
         </div>
         <div class="admin-profile">
           <div>
@@ -110,9 +111,9 @@
   <div class="modal" id="modal">
     <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
     <div id="modalBody"></div>
-</div>
+  </div>
 </div>
 
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
